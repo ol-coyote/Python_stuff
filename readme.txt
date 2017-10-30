@@ -1,15 +1,20 @@
 
 VRFY.py
-VRFY will attempt to connect to an open SMTP server and send a VRFY request along with a user name. This is probably illegal to use in any 
-area other than a closed privately owned network. This code is used for educational purposed and is released under the GNU GPL. 
+VRFY/old_VRFY will attempt to connect to an open SMTP server port 
+and send a VRFY request along with a user name. This is probably 
+illegal to use in any area other than a closed privately owned 
+network. This code is used for educational purposed and is released 
+under the GNU GPL. 
 
 old_VRFY.py usage:
 for ip in $(cat <opensmtpports.txt>);do old_VRFY.py <users.txt> $ip <port>; done
 
 V1 release notes:
-First commit is mostly working, pushed to create baseline. Will open a text file containing IP address
-on each line. The users file hasn't been implemented yet. I also plan on threading the application to 
-speed up the scan process time. Most of the network related errors have been handled and tested at this time.
+First commit is mostly working, pushed to create baseline. Will open a 
+text file containing IP address on each line. The users file hasn't been 
+implemented yet. I also plan on threading the application to speed up the 
+scan process time. Most of the network related errors have been handled 
+and tested at this time.
 
 TODO:
 Thread 
