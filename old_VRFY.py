@@ -26,7 +26,7 @@ def main():
         print banner
         for i in names: 
             s.send('VRFY ' + i + '\r\n')
-            result = recv(1024)
+            result = s.recv(1024)
             print result
         s.close()
     except socket.error as e:
