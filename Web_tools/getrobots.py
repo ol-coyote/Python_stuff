@@ -1,4 +1,5 @@
-
+#!/usr/bin/env python3 -tt
+#-*- coding: utf-8 -*-
 import re
 import requests
 encoding_str='latin-1'
