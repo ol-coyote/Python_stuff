@@ -1,7 +1,7 @@
 
 import re
 import requests
-
+encoding_str='latin-1'
 '''
     This function retrieves each entry in the robots.txt file and returns a nested dictionary
 '''
@@ -11,7 +11,7 @@ def get_disallow(sess,resp,regex_s,root_url):
     hidden=re.findall(regex_s,resp.content.decode())
 
     for i in hidden:
-        ary.append(i.encode('latin-1').strip())
+        ary.append(i.encode(encoding_str).strip())
         
     cache={}
     
@@ -19,7 +19,7 @@ def get_disallow(sess,resp,regex_s,root_url):
         url=""
         url=root_url+i.decode()
         resp=sess.get(url)
-        cache.update({bytes(root_url+i.decode(),'latin-1'):{i:resp.content}})
+        cache.update({bytes(root_url+i.decode(),encoding_str):{i:resp.content}})
 
     return cache
 
@@ -35,7 +35,7 @@ def write_resp(cache):
                 k=(k.decode().replace('/',''))
                 with open(k+'.resp', 'wb') as f:
                     bytes_written+=f.write(key)
-                    bytes_written+=f.write(bytes('\n','latin-1'))
+                    bytes_written+=f.write(bytes('\n',encoding_str))
                     bytes_written+=f.write(v)
     except Exception as e:
         print('Error encountered: {}'.format(e))
