@@ -64,3 +64,22 @@ def main():
     
 if __name__ == '__main__':
     main()
+
+
+'''
+    Why is this even necessary?
+
+    Read this excerpt from an SEO website concerning robots.txt:
+
+    Also, if you happen to have sensitive data on your site that 
+    you do not want the world to see, you will also prefer that 
+    search engines do not index these pages (although in this 
+    case the only sure way for not indexing sensitive data is to 
+    keep it offline on a separate machine). 
+    # http://www.webconfs.com/what-is-robots-txt-article-12.php
+    
+    The sure way is too keep it offline, but that is rarely the 
+    case... 
+
+
+'''
