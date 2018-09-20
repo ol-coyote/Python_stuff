@@ -1,7 +1,12 @@
 import base64
 import requests
 '''
-program for brute forcing the password on an httpauth web application
+
+This program is used for brute forcing the password on an httpauth web application.
+A few modifications could weaponize this into accepting filenames for usernames, passwords, and urls.
+IF YOU FEEL THE NEED TO ASK FOR THE MODIFIED CODE, DONT!
+Quit being a script kiddie.
+
 '''
 
 '''
@@ -48,6 +53,7 @@ if __name__=='__main__':
 	main()
 
 '''
+
 BAD LOGIN:
 b'<?xml version="1.0" encoding="ISO-8859-1"?>\r\n<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"\r\n  
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\r\n<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">\r\n
