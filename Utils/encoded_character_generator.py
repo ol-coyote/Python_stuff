@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-#badchars_generator.py
+# encoded_character_generator.py
+# Why maintain a couple of files worth a couple hundred megs in disk size?
+# usage: python3 encoded_character_generator.py
 import string
 
 # This method is called to generate character encoding payloads in various HTML
