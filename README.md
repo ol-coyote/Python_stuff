@@ -1,4 +1,1 @@
-Adding readme:
-
-//TODO Fill this out properly later.
-
+This repo contains a random collection of web application testing scripts developed to automate the boring stuff.
