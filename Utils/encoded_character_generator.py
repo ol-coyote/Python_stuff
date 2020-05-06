@@ -15,13 +15,13 @@ def generate_encoded_files():
 			for j in string.hexdigits[:16]:
 				f.write(f"%{i}{j}\n")
 				
-    # output will be formated as : "&#NN" where N is the character in the string
+    # output will be formated as : "&#xNN" where N is the character in the string
 	with open('badchars2.txt','w') as f:
 		for i in string.hexdigits[:16]:
 			for j in string.hexdigits[:16]:
 				f.write(f"&#x{i}{j}\n")	
 
-    # output will be formated as : "&#xNN" where N is the character in the string
+    # output will be formated as : "&#NN...N" where N is the character in the string
 	with open('badchars3.txt','w') as f:
 		for i in range(0xffffff + 0x1):
 			f.write(f"&#{i:06}\n")
