@@ -12,13 +12,16 @@ def conn_device(HOST):
     tn.write("enable\n".encode('latin-1'))
     tn.write('password\n'.encode('latin-1'))
     tn.write("conf t\n".encode('latin-1'))
-    tn.write("int loop 0\n".encode('latin-1'))
-    tn.write("ip addr 1.2.3.4 255.255.255.255\n".encode('latin-1'))
-    tn.write('no shut\n'.encode('latin-1'))
+    tn.write("int f 0/0\n".encode('latin-1'))
+    tn.write("duplex full\n".encode('latin-1'))
+    tn.write("no shut\n".encode('latin-1'))
+    #tn.write("int loop 0\n".encode('latin-1'))
+    #tn.write("ip addr 1.2.3.4 255.255.255.255\n".encode('latin-1'))
+    #tn.write('no shut\n'.encode('latin-1'))
     tn.write("end\n".encode('latin-1'))
     tn.write("exit\n".encode('latin-1'))
     print(tn.read_all())
-
+    
 def main():
     HOST = sys.argv[1]
     print(f"Connecting to {HOST} via telnet!")
